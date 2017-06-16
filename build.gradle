@@ -7,9 +7,9 @@ apply plugin: "maven-publish"
 distributions {
     main {
         contents {
-			into ("dist") {
-				from "dist"
-			}
+            into ("dist") {
+                from "dist"
+            }
             from "Dockerfile"
         }
     }
