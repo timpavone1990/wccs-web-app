@@ -1,8 +1,31 @@
 group = "de.koalaworks.wcts"
 version "0.0.1-SNAPSHOT"
 
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
+
+apply plugin: "com.moowork.node"
 apply plugin: "distribution"
 apply plugin: "maven-publish"
+
+clean {
+    delete "dist/"
+}
+
+task buildWebApp(type: NpmTask) {
+    args = ["run", "ng", "build"]
+}
+
+distTar.dependsOn(buildWebApp)
+distZip.dependsOn(buildWebApp)
 
 distributions {
     main {
