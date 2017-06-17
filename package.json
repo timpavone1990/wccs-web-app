@@ -1,6 +1,8 @@
 {
   "name": "wcts-web-app",
   "version": "0.0.0",
+  "description": "",
+  "author": "Tim Gremplewski",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
