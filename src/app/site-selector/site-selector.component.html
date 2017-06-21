@@ -1,0 +1,11 @@
+<div ngbDropdown class="d-inline-block">
+    <!-- TODO: Show default text if no site selected -->
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Selected a site</button>
+    <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+        <button *ngFor="let site of getSites()" class="dropdown-item" (click)="setSelectedSite(site)">{{site.name}}</button>
+    </div>
+</div>
+
+<div *ngIf="selectedSite">
+    Selected Site: {{selectedSite.name}}
+</div>
