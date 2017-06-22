@@ -1,5 +1,7 @@
 import {Component, Input} from "@angular/core";
-import {Site} from "../site-selector/site";
+import {Router} from "@angular/router";
+import {Site} from "../site";
+import {Page} from "../page";
 
 @Component({
     selector: "pages-list",
@@ -7,4 +9,10 @@ import {Site} from "../site-selector/site";
 })
 export class PagesListComponent {
     @Input() site: Site;
+
+    constructor(private router: Router) { }
+
+    showPageDetails(page: Page) {
+        this.router.navigate(["/page"])
+    }
 }

@@ -1,6 +1,3 @@
 <h1>{{title}}</h1>
 
-<site-selector (siteSelected)="updatePagesList($event)"></site-selector>
-
-<h2>Pages</h2>
-<pages-list [site]="site"></pages-list>
+<router-outlet></router-outlet>
