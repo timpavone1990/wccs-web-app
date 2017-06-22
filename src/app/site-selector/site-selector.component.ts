@@ -7,8 +7,9 @@ import {Site} from "./site";
 })
 export class SiteSelectorComponent {
     @Output() siteSelected = new EventEmitter<Site>();
+    private _selectedSite: Site;
 
-    private sites: Site[] = [
+    private _sites: Site[] = [
         new Site("B.A. Bildungswissenschaft"),
         new Site("B.A. Kulturwissenschaften mit Fachschwerpunkt Geschichte, Literaturwissenschaft, Philosophie"),
         new Site("B.A. Politikwissenschaft, Verwaltungswissenschaft, Soziologie (PVS)"),
@@ -26,16 +27,18 @@ export class SiteSelectorComponent {
         new Site("Institut für Bildungswissenschaft und Medienforschung")
     ];
 
-    getSites() {
-        return this.sites.sort((siteA: Site, siteB: Site) => {
-            return siteA.getName().localeCompare(siteB.getName());
+    get sites() {
+        return this._sites.sort((siteA: Site, siteB: Site) => {
+            return siteA.name.localeCompare(siteB.name);
         });
     }
 
-    selectedSite: Site;
+    get selectedSite() {
+        return this._selectedSite;
+    }
 
     setSelectedSite(site: Site) {
-        this.selectedSite = site;
+        this._selectedSite = site;
         this.siteSelected.emit(site);
     }
 }

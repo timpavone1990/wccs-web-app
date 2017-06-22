@@ -1,7 +1,7 @@
 export class Site {
-    constructor(private name: string) { }
+    constructor(private _name: string) { }
 
-    getName() {
-        return this.name;
+    get name() {
+        return this._name;
     }
 }

@@ -7,9 +7,13 @@ import {Site} from "./site-selector/site";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = "WebContent Typing System";
+    private _title = "WebContent Typing System";
 
     private site: Site;
+
+    get title() {
+        return this._title;
+    }
 
     updatePagesList(site: Site) {
         this.site = site;
