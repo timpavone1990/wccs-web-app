@@ -10,6 +10,7 @@ import {PagesListComponent} from "./pages-list/pages-list.component";
 import {PageDetailsViewComponent} from "./page-details-view/page-details-view.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {PageService} from "./page.service";
 
 @NgModule({
     declarations: [
@@ -24,7 +25,9 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
         BrowserModule,
         NgbModule.forRoot()
     ],
-    providers: [],
+    providers: [
+        PageService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

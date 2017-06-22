@@ -13,6 +13,6 @@ export class PagesListComponent {
     constructor(private router: Router) { }
 
     showPageDetails(page: Page) {
-        this.router.navigate(["/page"])
+        this.router.navigate(["/page"], { "queryParams": { "page": page.url } })
     }
 }
