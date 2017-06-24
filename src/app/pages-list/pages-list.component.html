@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let page of site.pages" (click)="showPageDetails(page)">
+            <tr *ngFor="let page of pages" (click)="showPageDetails(page)">
                 <td>{{page.url}}</td>
                 <td>{{page.status}}</td>
             </tr>

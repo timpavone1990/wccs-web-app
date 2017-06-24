@@ -15,7 +15,9 @@ export class PageDetailsViewComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.sub = this.route.queryParams.subscribe((params: Params) => {
-            this._page = this.pageService.getPage(params["page"]);
+            this.pageService
+                .getPage(params["site"], params["page"])
+                .then(page => this._page = page);
         });
     }
 

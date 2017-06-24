@@ -11,6 +11,8 @@ import {PageDetailsViewComponent} from "./page-details-view/page-details-view.co
 import {AppRoutingModule} from "./app-routing.module";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {PageService} from "./page.service";
+import {SiteService} from "./site.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
     declarations: [
@@ -23,10 +25,12 @@ import {PageService} from "./page.service";
     imports: [
         AppRoutingModule,
         BrowserModule,
+        HttpModule,
         NgbModule.forRoot()
     ],
     providers: [
-        PageService
+        PageService,
+        SiteService
     ],
     bootstrap: [AppComponent]
 })

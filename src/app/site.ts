@@ -1,13 +1,7 @@
-import {Page} from "./page";
-
 export class Site {
-    constructor(private _name: string, private _pages: Page[]) { }
+    constructor(private _name: string) { }
 
-    get name() {
+    get name(): string {
         return this._name;
-    }
-
-    get pages() {
-        return this._pages;
     }
 }
