@@ -9,13 +9,14 @@ export class PageService {
     }
 
     getPages(siteId: string): Promise<Page[]> {
-        return this.http.get("http://storage-api:52629/sites/" + siteId + "/pages")
+        // TODO Set correct hostname
+        return this.http.get("http://localhost:52629/sites/" + siteId + "/pages")
             .toPromise().then(response => response.json().map(page => new Page(page.url, page.status)))
             .catch(this.handleError)
     }
 
     getPage(siteId: string, pageId: string): Promise<Page> {
-        return this.http.get("http://storage-api:52629/sites/" + siteId + "/pages/" + pageId.replace(/\//g, ""))
+        return this.http.get("http://localhost:52629/sites/" + siteId + "/pages/" + pageId.replace(/\//g, ""))
             .toPromise().then(response => {
                 let rawPage = response.json();
                 return new Page(rawPage.url, rawPage.status);

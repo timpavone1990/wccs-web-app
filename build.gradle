@@ -21,7 +21,7 @@ clean {
 }
 
 task buildWebApp(type: NpmTask) {
-    args = ["run", "ng", "build"]
+    args = ["run", "buildProd"]
 }
 
 distTar.dependsOn(buildWebApp)

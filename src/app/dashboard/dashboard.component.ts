@@ -5,9 +5,13 @@ import {Site} from "../site";
     templateUrl: "./dashboard.component.html"
 })
 export class DashboardComponent {
-    private site: Site;
+    private _site: Site;
 
     updatePagesList(site: Site) {
-        this.site = site;
+        this._site = site;
+    }
+
+    get site(): Site {
+        return this._site;
     }
 }
