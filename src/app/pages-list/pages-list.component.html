@@ -6,12 +6,14 @@
             <thead>
             <tr>
                 <th>URL</th>
+                <th>Page Type</th>
                 <th>Status</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let page of pages" (click)="showPageDetails(page)">
                 <td>{{page.url}}</td>
+                <td>{{page.pageType}}</td>
                 <td>{{page.status}}</td>
             </tr>
             </tbody>
