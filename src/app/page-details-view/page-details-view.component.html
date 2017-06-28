@@ -1,4 +1,76 @@
 <div *ngIf="page">
-    Url: {{page.url}}<br/>
-    Status: {{page.status}}
+    <div class="row">
+        <div class="col-1 text-right font-weight-bold">URL</div>
+        <div class="col-11">{{page.url}}</div>
+    </div>
+    <div class="row">
+        <div class="col-1 text-right font-weight-bold">Status</div>
+        <div class="col-11">{{page.status}}</div>
+    </div>
+    <div class="row">
+        <div class="col-1 text-right font-weight-bold">Analysed on</div>
+        <div class="col-11">{{page.date}}</div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <button type="button" class="btn btn-success">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <span>Approve</span>
+            </button>
+            <button type="button" class="btn btn-danger">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <span>Discard</span>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <i class="fa fa-play" aria-hidden="true"></i>
+                <span>Analyse</span>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span>View Annotations</span>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <i class="fa fa-sitemap" aria-hidden="true"></i>
+                <span>View Page Graph</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="card mt-5">
+        <h5 class="card-header">Recognized Properties</h5>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-1 text-right font-weight-bold">Heading</div>
+                <div class="col-11">Some Heading</div>
+            </div>
+            <div class="row">
+                <div class="col-1 text-right font-weight-bold">Introduction</div>
+                <div class="col-11">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-5">
+        <h5 class="card-header">Unrecognized Properties</h5>
+        <div class="card-block">
+            <ul>
+                <li>Contact</li>
+                <li>Footer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mt-5">
+        <h5 class="card-header">Leftover Content</h5>
+        <div class="card-block">
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+    </div>
 </div>

@@ -1,22 +1,37 @@
 <div *ngIf="site" class="card">
     <div class="card-block">
-        <h4 class="card-title">Pages of site: {{site.name}}</h4>
-
-        <table class="table table-striped table-hover table-sm">
-            <thead>
-            <tr>
-                <th>URL</th>
-                <th>Page Type</th>
-                <th>Status</th>
-            </tr>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>
+                        <span>URL</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th>
+                        <span>Page Type</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                    <th>
+                        <span>Status</span>
+                        <i class="fa fa-sort" aria-hidden="true"></i>
+                    </th>
+                </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let page of pages" (click)="showPageDetails(page)">
-                <td>{{page.url}}</td>
-                <td>{{page.pageType}}</td>
-                <td>{{page.status}}</td>
-            </tr>
+                <tr *ngFor="let page of pages" (click)="showPageDetails(page)">
+                    <td>{{page.url}}</td>
+                    <td>{{page.pageType}}</td>
+                    <td>{{page.status}}</td>
+                </tr>
             </tbody>
         </table>
+        <ngb-pagination
+            [collectionSize]="120"
+            [(page)]="currentPage"
+            [maxSize]="5"
+            [rotate]="true"
+            [ellipses]="false"
+            [boundaryLinks]="true">
+        </ngb-pagination>
     </div>
 </div>

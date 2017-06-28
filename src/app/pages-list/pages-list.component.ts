@@ -6,11 +6,13 @@ import {PageService} from "../page.service";
 
 @Component({
     selector: "pages-list",
+    styleUrls: ["./pages-list.component.css"],
     templateUrl: "./pages-list.component.html"
 })
 export class PagesListComponent {
     private _site: Site;
     private _pages: Page[] = [];
+    private _currentPage: number = 1;
 
     constructor(private router: Router, private pageService: PageService) { }
 
@@ -34,5 +36,14 @@ export class PagesListComponent {
 
     get site(): Site {
         return this._site;
+    }
+
+
+    get currentPage(): number {
+        return this._currentPage;
+    }
+
+    set currentPage(value: number) {
+        this._currentPage = value;
     }
 }

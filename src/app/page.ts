@@ -9,8 +9,11 @@ export class Page {
         return this._status;
     }
 
-
     get pageType(): string {
         return this._pageType;
+    }
+
+    get date(): string {
+        return new Date().toDateString();
     }
 }
