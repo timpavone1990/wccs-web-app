@@ -5,33 +5,33 @@
                 <tr>
                     <th>
                         <span>URL</span>
-                        <i class="fa fa-sort" aria-hidden="true"></i>
+                        <!--<i class="fa fa-sort" aria-hidden="true"></i>-->
                     </th>
                     <th>
                         <span>Page Type</span>
-                        <i class="fa fa-sort" aria-hidden="true"></i>
+                        <!--<i class="fa fa-sort" aria-hidden="true"></i>-->
                     </th>
                     <th>
                         <span>Status</span>
-                        <i class="fa fa-sort" aria-hidden="true"></i>
+                        <!--<i class="fa fa-sort" aria-hidden="true"></i>-->
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let page of pages" (click)="showPageDetails(page)">
                     <td>{{page.url}}</td>
-                    <td>{{page.pageType}}</td>
+                    <td>{{page.type}}</td>
                     <td>{{page.status}}</td>
                 </tr>
             </tbody>
         </table>
-        <ngb-pagination
+        <!--<ngb-pagination
             [collectionSize]="120"
             [(page)]="currentPage"
             [maxSize]="5"
             [rotate]="true"
             [ellipses]="false"
             [boundaryLinks]="true">
-        </ngb-pagination>
+        </ngb-pagination>-->
     </div>
 </div>

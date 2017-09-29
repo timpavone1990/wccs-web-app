@@ -1,5 +1,5 @@
 export class Page {
-    constructor(private _url: string, private _status: string, private _pageType: string) { }
+    constructor(private _url: string, private _status: string, private _type: string) { }
 
     get url():string {
         return this._url;
@@ -9,8 +9,8 @@ export class Page {
         return this._status;
     }
 
-    get pageType(): string {
-        return this._pageType;
+    get type(): string {
+        return this._type;
     }
 
     get date(): string {

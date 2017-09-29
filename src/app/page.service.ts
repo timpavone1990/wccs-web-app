@@ -11,7 +11,9 @@ export class PageService {
     getPages(siteId: string): Promise<Page[]> {
         // TODO Set correct hostname
         return this.http.get("http://localhost:52629/sites/" + siteId + "/pages")
-            .toPromise().then(response => response.json().map(page => new Page(page.url, page.status, page.pageType)))
+            .toPromise().then(response => {
+                return response.json().pages.map(page => new Page(page.url, page.status, page.type))
+            })
             .catch(this.handleError)
     }
 

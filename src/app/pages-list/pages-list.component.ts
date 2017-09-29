@@ -29,8 +29,18 @@ export class PagesListComponent {
         this._site = site;
         if (this._site) {
             this.pageService
-                .getPages(this._site.name)
-                .then(pages => this._pages = pages);
+                .getPages(this._site.id)
+                .then(pages => {
+                    this._pages = pages.sort((a, b) => {
+                        if (a.url < b.url) {
+                            return -1;
+                        } else if (a.url > b.url) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    })
+                });
         }
     }
 
