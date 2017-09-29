@@ -13,12 +13,14 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {PageService} from "./page.service";
 import {SiteService} from "./site.service";
 import {HttpModule} from "@angular/http";
+import {PageFeaturesCardComponent} from "./page-features-card/page-features-card.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         DashboardComponent,
         PageDetailsViewComponent,
+        PageFeaturesCardComponent,
         PagesListComponent,
         SiteSelectorComponent
     ],

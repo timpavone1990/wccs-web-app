@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs/Subscription";
 import {PageService} from "../page.service";
-import {Page} from "../page";
+import {Page} from "../model/page";
 
 @Component({
     templateUrl: "./page-details-view.component.html"

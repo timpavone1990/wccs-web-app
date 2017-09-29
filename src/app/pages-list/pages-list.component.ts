@@ -1,7 +1,7 @@
 import {Component, Input} from "@angular/core";
 import {Router} from "@angular/router";
-import {Site} from "../site";
-import {Page} from "../page";
+import {Site} from "../model/site";
+import {Page} from "../model/page";
 import {PageService} from "../page.service";
 
 @Component({

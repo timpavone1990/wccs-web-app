@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Page} from "./page";
+import {Page} from "./model/page";
 import {Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
 
@@ -12,17 +12,14 @@ export class PageService {
         // TODO Set correct hostname
         return this.http.get("http://localhost:52629/sites/" + siteId + "/pages")
             .toPromise().then(response => {
-                return response.json().pages.map(page => new Page(page.url, page.status, page.type))
+                return response.json().pages.map(page => page as Page)
             })
             .catch(this.handleError)
     }
 
     getPage(siteId: string, pageId: string): Promise<Page> {
         return this.http.get("http://localhost:52629/sites/" + siteId + "/pages/" + encodeURIComponent(pageId))
-            .toPromise().then(response => {
-                let rawPage = response.json();
-                return new Page(rawPage.url, rawPage.status, rawPage.type);
-            })
+            .toPromise().then(response => response.json() as Page)
             .catch(this.handleError)
     }
 

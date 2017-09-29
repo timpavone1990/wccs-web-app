@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Site} from "../site";
-import {Page} from "../page";
+import {Site} from "../model/site";
 import {SiteService} from "../site.service";
 
 @Component({

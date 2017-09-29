@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {Site} from "../site";
+import {Site} from "../model/site";
 
 @Component({
     templateUrl: "./dashboard.component.html"

@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
 import 'rxjs/add/operator/toPromise';
-import {Site} from "./site";
+import {Site} from "./model/site";
 
 @Injectable()
 export class SiteService {
