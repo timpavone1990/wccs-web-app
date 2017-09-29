@@ -10,7 +10,7 @@ export class SiteService {
 
     getSites(): Promise<Site[]> {
         // TODO Set correct hostname
-        return this.http.get("http://storage-api:52629/sites")
+        return this.http.get("http://localhost:52629/sites")
             .toPromise().then(response => response.json().sites.map((site) => new Site(site.id, site.name)))
             .catch(this.handleError)
     }
