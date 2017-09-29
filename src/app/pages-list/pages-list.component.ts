@@ -21,7 +21,7 @@ export class PagesListComponent {
     }
 
     showPageDetails(page: Page) {
-        this.router.navigate(["/page"], { "queryParams": { "site": this._site.name, "page": page.url } })
+        this.router.navigate(["/page"], { "queryParams": { "site": this._site.id, "page": page.url } })
     }
 
     @Input()

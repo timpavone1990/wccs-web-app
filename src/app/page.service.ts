@@ -18,10 +18,10 @@ export class PageService {
     }
 
     getPage(siteId: string, pageId: string): Promise<Page> {
-        return this.http.get("http://localhost:52629/sites/" + siteId + "/pages/" + pageId.replace(/\//g, ""))
+        return this.http.get("http://localhost:52629/sites/" + siteId + "/pages/" + encodeURIComponent(pageId))
             .toPromise().then(response => {
                 let rawPage = response.json();
-                return new Page(rawPage.url, rawPage.status, rawPage.pageType);
+                return new Page(rawPage.url, rawPage.status, rawPage.type);
             })
             .catch(this.handleError)
     }

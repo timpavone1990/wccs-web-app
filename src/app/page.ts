@@ -12,8 +12,4 @@ export class Page {
     get type(): string {
         return this._type;
     }
-
-    get date(): string {
-        return new Date().toDateString();
-    }
 }
