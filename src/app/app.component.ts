@@ -7,7 +7,7 @@ import {Site} from "./site";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    private _title = "WebContent Typing System";
+    private _title = "Web Content Classification System";
 
     get title() {
         return this._title;
