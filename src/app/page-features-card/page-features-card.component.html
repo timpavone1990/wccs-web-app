@@ -3,9 +3,7 @@
     <div id="accordion" role="tablist" aria-multiselectable="true">
         <div *ngFor="let feature of features" class="card mt-2">
             <h6 class="card-header">{{feature.id}}</h6>
-            <div class="card-block">
-                <div class="col-10">{{feature.value}}</div>
-            </div>
+            <div class="card-block">{{feature.value}}</div>
         </div>
     </div>
 </div>
