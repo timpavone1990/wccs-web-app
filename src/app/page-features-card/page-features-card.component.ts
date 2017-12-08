@@ -33,7 +33,7 @@ export class PageFeaturesCardComponent {
                 });
             } else {
                 const myPath = path + " \u25B6 " + name;
-                features.push(new FeatureCardItem(myPath, property.content));
+                features.push(new FeatureCardItem(myPath, property.content, property.type));
                 this.composeFeatures(myPath, property, features);
             }
         });
@@ -44,11 +44,11 @@ export class PageFeaturesCardComponent {
             if (Array.isArray(reference)) {
                 reference.forEach((item, index) => {
                     const itemPath = `${path} \u25B6 ${name}[${index}]`;
-                    features.push(new FeatureCardItem(itemPath, item.destination));
+                    features.push(new FeatureCardItem(itemPath, item.destination, item.type));
                 });
             } else {
                 const myPath = path + " \u25B6 " + name;
-                features.push(new FeatureCardItem(myPath, reference.destination));
+                features.push(new FeatureCardItem(myPath, reference.destination, reference.type));
             }
         })
     }

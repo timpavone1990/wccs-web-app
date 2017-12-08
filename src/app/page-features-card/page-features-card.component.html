@@ -2,7 +2,14 @@
     <h5>Recognized properties and references</h5>
     <div id="accordion" role="tablist" aria-multiselectable="true">
         <div *ngFor="let feature of features" class="card mt-2">
-            <h6 class="card-header">{{feature.id}}</h6>
+            <div class="row">
+                <div class="col pr-0">
+                    <h6 class="card-header">{{feature.id}}</h6>
+                </div>
+                <div class="col pl-0">
+                    <h6 class="card-header text-right">{{feature.class}}</h6>
+                </div>
+            </div>
             <div class="card-block">{{feature.value}}</div>
         </div>
     </div>
