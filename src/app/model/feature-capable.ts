@@ -1,9 +1,9 @@
 export abstract class FeatureCapable {
-    private _properties: object;
+    private _contents: object;
     private _references: object;
 
-    get properties(): object {
-        return this._properties;
+    get contents(): object {
+        return this._contents;
     }
 
     get references(): object {

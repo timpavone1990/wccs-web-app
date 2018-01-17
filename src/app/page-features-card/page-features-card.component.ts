@@ -22,10 +22,10 @@ export class PageFeaturesCardComponent {
     }
 
     private composeFeatures(path: string, featureCapable: FeatureCapable, features: Array<FeatureCardItem>) {
-        const propertyNames = Object.keys(featureCapable.properties);
+        const propertyNames = Object.keys(featureCapable.contents);
 
         propertyNames.forEach(name => {
-            const property = featureCapable.properties[name] as Property;
+            const property = featureCapable.contents[name] as Property;
             if (Array.isArray(property)) {
                 property.forEach((item, index) => {
                     const itemPath = `${path} \u25B6 ${name}[${index}]`;
@@ -33,7 +33,7 @@ export class PageFeaturesCardComponent {
                 });
             } else {
                 const myPath = path + " \u25B6 " + name;
-                features.push(new FeatureCardItem(myPath, property.content, property.type));
+                features.push(new FeatureCardItem(myPath, property.content, property.class));
                 this.composeFeatures(myPath, property, features);
             }
         });
@@ -43,12 +43,13 @@ export class PageFeaturesCardComponent {
             const reference = featureCapable.references[name] as Reference;
             if (Array.isArray(reference)) {
                 reference.forEach((item, index) => {
+                    const referenceElement = item as Reference;
                     const itemPath = `${path} \u25B6 ${name}[${index}]`;
-                    features.push(new FeatureCardItem(itemPath, item.destination, item.type));
+                    features.push(new FeatureCardItem(itemPath, referenceElement.destination, referenceElement.class));
                 });
             } else {
                 const myPath = path + " \u25B6 " + name;
-                features.push(new FeatureCardItem(myPath, reference.destination, reference.type));
+                features.push(new FeatureCardItem(myPath, reference.destination, reference.class));
             }
         })
     }

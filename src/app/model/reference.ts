@@ -1,10 +1,10 @@
 export class Reference {
-    private _type: string;
+    private _class: string;
     private _destination: string;
 
 
-    get type(): string {
-        return this._type;
+    get class(): string {
+        return this._class;
     }
 
     get destination(): string {
