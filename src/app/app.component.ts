@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    private _title = "Web Content Classification System";
+    private _title = "Webpage Content Classification System";
 
     get title() {
         return this._title;
