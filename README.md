@@ -1,4 +1,7 @@
-# WctsWebApp
+# WCCS Web App
+
+This is the reference implementation for the Web App in the Web Content Classification System.
+See my [master's thesis](https://github.com/TheGreyKoala/masters-thesis) for more information about this system and the role of the Web App.
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
